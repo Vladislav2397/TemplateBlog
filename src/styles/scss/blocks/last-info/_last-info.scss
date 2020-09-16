@@ -1,0 +1,15 @@
+.last-info {
+  padding: 30px 0;
+  margin-top: 20px;
+  background-color: $dark;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &__section {
+    display: grid;
+  }
+}

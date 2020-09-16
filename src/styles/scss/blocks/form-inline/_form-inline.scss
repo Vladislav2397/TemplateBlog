@@ -1,0 +1,62 @@
+.form-inline {
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: auto auto;
+  overflow: hidden;
+
+  &__pane {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: $light;
+  }
+
+  &__field {
+    font-size: $font-lg;
+    color: $dark;
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  &__btn {
+    width: 40px;
+    height: 100%;
+    font-size: $font-lg;
+    border-radius: 0 3px 3px 0;
+    color: $light;
+    transition: 0.5s;
+    background-color: $dark;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #000;
+    }
+  }
+
+  &__icon {
+    font-size: $font-xl;
+  }
+
+  &--light-theme {
+    border: 1px solid $light;
+
+    .form-inline__pane {
+      background-color: transparent;
+    }
+
+    .form-inline__field {
+      color: $light;
+    }
+
+    .form-inline__btn:hover {
+      background-color: $light;
+      color: $dark;
+    }
+  }
+
+  &--small {
+    height: 35px;
+  }
+}

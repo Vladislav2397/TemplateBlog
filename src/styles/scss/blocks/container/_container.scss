@@ -1,0 +1,8 @@
+.container {
+  max-width: 1110px;
+  margin: auto;
+
+  @include media-screen-max($screen-xl) {
+    padding: 0 30px;
+  }
+}

@@ -1,0 +1,15 @@
+@import
+  'scss/assets/variables',
+  'scss/assets/fonts',
+  'scss/assets/mixins';
+
+@import
+  'scss/base/base';
+
+@import
+  'scss/blocks/navbar/navbar',
+  'scss/blocks/container/container',
+  'scss/blocks/form-inline/form-inline',
+  'scss/blocks/main-section/main-section',
+  'scss/blocks/last-info/last-info',
+  'scss/blocks/footer/footer';

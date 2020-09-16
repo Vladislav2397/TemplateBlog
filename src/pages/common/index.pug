@@ -1,8 +1,25 @@
-extends ../base
+extends ../index-template
 
 block variables
   - var page_title = "Home"
-  - var body_class = "home-page"
+    
 
 block content
-  h1 Hello from Gulp
+  .main-section.container
+
+    .main-section__pane
+
+      .main-section__header
+        .main-section__title TemplateBlog
+        .main-section__subtitle Lorem ipsum, dolor sit amet consectetur adipisicing elit!
+
+      include blocks/carousel
+
+    .main-section__pane#articles
+      include blocks/articles
+
+    .main-section__pane
+      include blocks/sidebar
+
+    // TODO: Footer-links
+    // TODO: Carousel infinite

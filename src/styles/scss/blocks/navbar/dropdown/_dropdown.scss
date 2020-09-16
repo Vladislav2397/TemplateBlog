@@ -1,0 +1,30 @@
+.dropdown {
+  position: relative;
+  z-index: 10;
+
+  &:hover .dropdown__menu {
+    transform: scaleY(1);
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    width: 200px;
+    height: auto;
+    transform: scaleY(0);
+    padding: 15px 0;
+    transition: 0.5s;
+    transform-origin: top;
+    background: $dark;
+  }
+
+  &__link {
+    margin: 15px 0;
+    color: $light;
+    font-size: $font-lg;
+  }
+}

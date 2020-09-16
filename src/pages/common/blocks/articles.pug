@@ -1,0 +1,27 @@
+.article(
+  v-for="item in items"
+)
+  a.article__header(:href='item.link') {{ item.title }}
+  .article__pub-date
+    i.far.fa-clock
+    | {{ item.pubDate }}
+  .article__body
+    a.article__pane(:href='item.link')
+      img.article__image(:src='item.imageSrc', alt="Article image")
+    .article__tags(v-for="tag in item.tags")
+      a.article__tag(:href='tag.link') {{ tag.text }}
+    .article__content {{ item.content }}
+    .article__functions
+      .article__btn Read More
+      .article__links
+        a.article__link(href="#")
+          i.article__icon.fab.fa-whatsapp.article__icon--whatsapp
+        a.article__link.article__icon(href="#")
+          i.article__icon.fab.fa-twitter.article__icon--twitter
+        a.article__link.article__icon(href="#")
+          i.article__icon.article__icon--pinterest.fab.fa-pinterest-p
+        a.article__link.article__icon(href="#")
+          i.article__icon.fab.fa-facebook-f.article__icon--facebook
+        a.article__link.article__icon(href="#")
+          i.article__icon.article__icon--mail.far.fa-envelope-open
+      .article__post Post a Comment
