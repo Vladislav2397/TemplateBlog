@@ -1,23 +1,20 @@
 nav.section.navbar#navbar
-  .navbar__inner.container.text--light.text--lg
+  .navbar__inner.container
 
-    .navbar__section
-      .navbar__logo.text--title-lg
-        a.navbar__brand(href='/') TemplateBlog
+    a.navbar__section.navbar__brand(href='/') TemplateBlog
+
+    .navbar__section.navbar__links.navbar__section--expand-hidden
+      a.navbar__link(href='/') Home
+      .navbar__link.dropdown Dropdown
+        .dropdown__menu
+          a.navbar__link.dropdown__link(
+            v-for="link in dropdownLinks"
+            href="#"
+          ) {{ link }}
+      a.navbar__link(href='#') Services
+      a.navbar__link(href='#') Link
 
     .navbar__section.navbar__section--expand-hidden
-      .navbar__links
-        a.navbar__link(href='/') Home
-        .navbar__link.dropdown Dropdown
-          .dropdown__menu
-            a.navbar__link.dropdown__link(
-              v-for="link in dropdownLinks"
-              href="#"
-            ) {{ link }}
-        a.navbar__link(href='#') Services
-        a.navbar__link(href='#') Link
-
-    .navbar__section.navbar__search.navbar__section--expand-hidden
       form.form-inline.form-inline--light-theme.form-inline--small
         input.form-inline__field(type='text' placeholder='Search this blog')
         button.form-inline__btn

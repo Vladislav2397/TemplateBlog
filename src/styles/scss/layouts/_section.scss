@@ -8,7 +8,15 @@
     align-items: start;
   }
 
+  &--3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   &--min-auto-min {
     grid-template-columns: min-content 1fr min-content;
+  }
+
+  &__content {
+    width: 100%;
   }
 }

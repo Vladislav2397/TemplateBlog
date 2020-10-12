@@ -3,6 +3,7 @@
   background-color: #000;
 
   &__inner {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 10px 0;
