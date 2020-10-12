@@ -115,29 +115,7 @@
   }
 
   &__icon {
-    font-size: $font-xl;
-    color: $gray;
     transition: 0.8s;
-
-    &--whatsapp:hover {
-      color: $whatsapp-color;
-    }
-
-    &--twitter:hover {
-      color: $twitter-color;
-    }
-
-    &--pinterest:hover {
-      color: $pinterest-color;
-    }
-
-    &--facebook:hover {
-      color: $facebook-color;
-    }
-
-    &--mail:hover {
-      color: $mail-color;
-    }
   }
 
   &__post {

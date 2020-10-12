@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  background-color: #000;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 0;
+  }
+
+  &__license {
+    font-size: $font-sm;
+    color: $light;
+  }
+
+  &__links {
+    justify-self: end;
+  }
+
+  &__link {
+    font-size: $font-sm;
+    color: $pink;
+    margin: 0 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

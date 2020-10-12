@@ -1,0 +1,75 @@
+.section.sidebar
+
+  .sidebar__item
+    .sidebar__header.text--xl Subscribe
+    .sidebar__content.subscribe.text--sm
+      i.fas.fa-envelope.subscribe__icon.text--brand-md.text--light
+      .subscribe__header Subscribe
+      .subscribe__description.text--center.
+        Subscribe for free to get 1 mail per week.
+      form.form-inline
+        input.form-inline__field(type="text" placeholder="Email Address")
+        button.form-inline__btn
+            i.far.fa-paper-plane.form-inline__icon
+
+  .sidebar__item
+    .sidebar__header Sections
+    .sidebar__content.sections
+      
+      a.sections__item(href="#")
+        img.sections__image(src="public/img/mindfulness.jpg", alt="Image" width="300")
+        .sections__tag Health
+
+      a.sections__item(href="#")
+        img.sections__image(src="public/img/mastodon.jpg", alt="Image" width="300")
+        .sections__tag Tech
+
+      a.sections__item(href="#")
+        img.sections__image(src="public/img/acupuncture.jpg", alt="Image" width="300")
+        .sections__tag Travel
+
+      a.sections__item(href="#")
+        img.sections__image(src="public/img/coconut-oil.jpg", alt="Image" width="300")
+        .sections__tag Women
+
+  .sidebar__item
+    .sidebar__header trending now
+    .sidebar__content.list-posts
+      .list-posts__item
+        a.list-posts__link(href="#")
+          .list-posts__pane.list-posts__pane--small
+            img.list-posts__image(src="public/img/mastodon.jpg", alt="image")
+          .list-posts__title Mastodon, a much better twitter
+          .list-posts__content.
+            Mastodon  isn’t just a website, it is a federation—think Star Trek. Thousands of independ…
+      
+      .list-posts__item
+        a.list-posts__link(href="#")
+          .list-posts__pane.list-posts__pane--small
+            img.list-posts__image(src="public/img/acupuncture.jpg", alt="image")
+          .list-posts__title The magic in acupuncture
+          .list-posts__content.
+            Acupuncture[a] is a form of alternative medicine and a key component of traditional Chine…
+
+  .sidebar__item
+    .sidebar__header About me
+    .sidebar__content.about
+      a.about__pane(href='#')
+        img.about__image(src="", alt="image")
+      a.about__content(href='#').
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque odit reprehenderit nobis quaerat repudiandae accusamus ipsa rerum vero.
+
+  .sidebar__item.sidebar__follow
+    .sidebar__header Follow me
+    .sidebar__links
+      
+      a.sidebar__link.sidebar__link--vk(href="#")
+        i.sidebar__icon.fab.fa-vk
+      a.sidebar__link.sidebar__link--youtube(href="#")
+        i.sidebar__icon.fab.fa-youtube
+      a.sidebar__link.sidebar__link--facebook(href="#")
+        i.sidebar__icon.fab.fa-facebook-f
+      a.sidebar__link.sidebar__link--instagram(href="#")
+        i.sidebar__icon.fab.fa-instagram
+      a.sidebar__link.sidebar__link--pinterest(href="#")
+        i.sidebar__icon.fab.fa-pinterest-p

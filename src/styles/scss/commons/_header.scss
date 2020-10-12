@@ -1,0 +1,9 @@
+.header {
+  padding-top: $navbar-height + 50px;
+  padding-bottom: 50px;
+
+  &__title {
+    margin-bottom: 5px;
+    font-family: $font-coming-soon;
+  }
+}

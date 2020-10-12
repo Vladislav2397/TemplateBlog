@@ -1,0 +1,14 @@
+.section {
+  width: 100%;
+  display: grid;
+
+  &--1fr-250 {
+    grid-template-columns: 1fr 250px;
+    grid-gap: 0 40px;
+    align-items: start;
+  }
+
+  &--min-auto-min {
+    grid-template-columns: min-content 1fr min-content;
+  }
+}

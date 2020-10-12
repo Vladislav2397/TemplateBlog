@@ -1,0 +1,34 @@
+extends doctype
+
+block body
+
+  include includes/navbar
+
+  .container
+    .section.header.text--md.text--center
+      .header__title.text--brand-md TemplateBlog
+      | Lorem ipsum, dolor sit amet consectetur adipisicing elit!
+    
+    include includes/carousel
+
+    .section.section--1fr-250
+      block content
+
+      include includes/sidebar
+
+  //- .main-section.container
+
+  //-   .main-section__pane
+
+  //-     .main-section__header
+  //-       .main-section__title TemplateBlog
+  //-       .main-section__subtitle Lorem ipsum, dolor sit amet consectetur adipisicing elit!
+      
+  //-     block main-section__pane-header
+
+  //-   .main-section__pane
+  //-     include pages/blocks/sidebar
+  
+  //- include includes/last-info
+
+  //- include includes/footer

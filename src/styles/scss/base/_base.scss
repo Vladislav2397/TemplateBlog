@@ -7,25 +7,19 @@
 
 body {
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $font-open-sans, sans-serif;
+}
+
+i, p, a, div, button, form, input {
+  color: inherit;
+  font-size: inherit;
 }
 
 a {
   text-decoration: none;
-  color: $dark;
 }
 
-button {
-  border: none;
-  background: transparent;
-}
-
-input[type='text'] {
-  border: none;
-  background: transparent;
-}
-
-input[type='button'] {
+button, input[type='text'], input[type='button'] {
   border: none;
   background: transparent;
 }

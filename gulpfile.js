@@ -10,7 +10,7 @@ const
   browserSync = require('browser-sync');
 
 
-function sassConvert(done) {
+function sassCompiler(done) {
   gulp.src("./src/styles/**/*.scss")
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -45,8 +45,8 @@ function browserReload(done) {
 }
 
 
-function buildHTML(done) {
-  gulp.src("./src/pages/common/*.pug")
+function pugCompiler(done) {
+  gulp.src("./src/templates/pages/*.pug")
     .pipe(pug({
       pretty: true
     }))
@@ -70,12 +70,10 @@ function minifyJS(done) {
 
 
 function gulpWatchFiles() {
-  gulp.watch('./src/styles/**/*.scss', sassConvert);
-  gulp.watch('./src/pages/**/*.pug', buildHTML);
+  gulp.watch('./src/styles/**/*.scss', sassCompiler);
+  gulp.watch('./src/templates/**/*.pug', pugCompiler);
   gulp.watch('./src/scripts/*.js', minifyJS);
-  gulp.watch("./dist/**/*.html", browserReload);
-  gulp.watch("./dist/public/css/*.css", browserReload);
-  gulp.watch("./dist/public/js/*.js", browserReload);
+  gulp.watch("./dist/**/*", browserReload);
 }
 
 

@@ -74,7 +74,8 @@ var articles = new Vue({
         pubDate: 'Julu 15, 2020',
         imageSrc: 'public/img/acupuncture.jpg',
         tags: [
-          {link: '#', text: 'Health'}
+          {link: '#', text: 'Health'},
+          {link: '#', text: 'Woman'}
         ],
         content: "Acupuncture[a] is a form of alternative medicine and a key component of traditional Chinese medicine (TCM) in which thin needles are inserted into the body. Acupuncture is a pseudoscience because the theories and practices of TCM are not based on scientific knowledge, and it has been char…"
       },
@@ -85,7 +86,8 @@ var articles = new Vue({
         imageSrc: 'public/img/mindfulness.jpg',
         tags: [
           {link: '#', text: 'Health'},
-          {link: '#', text: 'Tech'}
+          {link: '#', text: 'Tech'},
+          {link: '#', text: 'Woman'}
         ],
         content: "Mindfulness  is the psychological process of purposely bringing one's attention to experiences occurring in the present moment without judgment, which one develops through the practice of meditation and through other training. Mindfulness derives from sati, a significant element of Bu…"
       },

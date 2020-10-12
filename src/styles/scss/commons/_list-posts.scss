@@ -1,13 +1,19 @@
-.trending {
+.list-posts {
   &__item {
-    background-color: $light;
+    background-color: transparent;
     transition: 0.5s;
     margin: 15px 0;
     border-bottom: 1px solid #ccc;
+    width: 100%;
+    min-height: 80px;
+    max-height: 100px;
+    overflow: hidden;
+    cursor: pointer;
 
     &:hover {
-      background-color: lighten($color: $pink, $amount: 15);
-      .trending__pane { transform: rotateZ(-3deg); }
+      background-color: $tercary;
+      .list-posts__pane { transform: rotateZ(-3deg); }
+      .list-posts__content { color: $dark }
     }
   }
 
@@ -17,15 +23,12 @@
   }
 
   &__pane {
+    width: 65px;
+    height: 65px;
+    margin: 3px;
     overflow: hidden;
     transition: 0.5s;
     float: left;
-
-    &--small {
-      width: 65px;
-      height: 65px;
-      margin: 3px;
-    }
   }
 
   &__image {
@@ -34,7 +37,7 @@
 
   &__title {
     font-size: $font-xs;
-    color: darken($color: $pink, $amount: 20);
+    color: $pink-darker;
     text-transform: uppercase;
     font-weight: bold;
     line-height: 1.5;
@@ -43,5 +46,11 @@
   &__content {
     font-size: 1.3rem;
     line-height: 1.5;
+  }
+
+  &--dark-theme {
+    .list-posts__content {
+      color: $light;
+    }
   }
 }

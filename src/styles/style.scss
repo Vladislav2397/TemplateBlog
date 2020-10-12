@@ -7,9 +7,23 @@
   'scss/base/base';
 
 @import
-  'scss/blocks/navbar/navbar',
-  'scss/blocks/container/container',
-  'scss/blocks/form-inline/form-inline',
+  'scss/commons/container',
+  'scss/commons/navbar',
+  'scss/commons/footer',
+  'scss/commons/form-inline',
+  'scss/commons/list-posts',
+  'scss/commons/dropdown',
+  'scss/commons/text',
+  'scss/commons/section',
+  'scss/commons/carousel',
+  'scss/commons/article',
+  'scss/commons/header',
+  'scss/commons/sidebar',
+  'scss/commons/subscribe',
+  'scss/commons/sections',
+  'scss/commons/trending',
+  'scss/commons/about';
+
+@import
   'scss/blocks/main-section/main-section',
-  'scss/blocks/last-info/last-info',
-  'scss/blocks/footer/footer';
+  'scss/blocks/last-info/last-info';

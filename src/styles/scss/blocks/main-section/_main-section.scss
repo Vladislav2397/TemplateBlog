@@ -1,8 +1,8 @@
 .main-section {
   padding-top: 50px;
   display: grid;
-  grid-template-columns: auto 250px;
-  grid-gap: 40px;
+  grid-template-columns: 1fr 250px;
+  grid-gap: 0 40px;
 
   &__pane:first-child {
     grid-column: 1 / 3;

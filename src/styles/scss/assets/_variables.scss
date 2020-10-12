@@ -1,7 +1,9 @@
-$dark: #353535;
+$dark: #343a40;
 $light: #f8f9fa;
 $gray: #999;
 $pink: #f5989f;
+$pink-darker: #ec3b48;
+$tercary: #ffded9;
 
 // Brand Colors
 $facebook-color: #0064E0;
@@ -25,9 +27,11 @@ $whatsapp-color: #1AE984;
 $mail-color: #C04136;
 
 $font-roboto: 'Roboto', 'Arial', sans-serif;
-$font-open-sans: 'Open Sans', 'Arial', sans-serif;
+$font-open-sans: 'OpenSans', 'Arial', sans-serif;
 $font-coming-soon: 'Coming Soon', cursive;
 $font-calligraffiti: 'Calligraffiti', cursive;
+
+$font-brand-md: 5rem;
 
 $font-title-xl: 3.5rem;
 $font-title-lg: 2.8rem;
@@ -45,3 +49,5 @@ $screen-lg: 1024px;
 $screen-md: 768px;
 $screen-sm: 425px;
 $screen-xs: 320px;
+
+$navbar-height: 50px;
