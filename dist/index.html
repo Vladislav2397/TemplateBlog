@@ -35,7 +35,7 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="section container">
       <div class="section header">
         <div class="header__title">TemplateBlog</div>Lorem ipsum, dolor sit amet consectetur adipisicing elit!
       </div>
@@ -53,7 +53,7 @@
         </div>
         <button class="carousel__btn carousel__btn--right" @click="right"><i class="fas fa-chevron-right carousel__icon"></i></button>
       </div>
-      <div class="section section section--1fr-250">
+      <div class="section section--1fr-250">
         <div class="section">
           <div id="articles">
             <div class="article" v-for="item in items"><a class="article__header" :href="item.link">{{ item.title }}</a>
@@ -124,65 +124,65 @@
         </div>
       </div>
     </div>
-    <section class="last-info">
-      <div class="last-info__inner container">
-        <div class="last-info__section">
-          <div class="last-info__header">Latest blog posts</div>
-          <div class="last-info__content list-posts list-posts--dark-theme">
-            <div class="list-posts__item"><a class="list-posts__link" href="#">
-                <div class="list-posts__pane list-posts__pane--small"><img class="list-posts__image" src="public/img/mastodon.jpg" alt="image"></div>
-                <div class="list-posts__title">Mastodon, a much better twitter</div>
-                <div class="list-posts__content">
-                  Mastodon  isn’t just a website, it is a federation—think Star Trek. Thousands of independ…
-                  
-                </div></a></div>
-            <div class="list-posts__item"><a class="list-posts__link" href="#">
-                <div class="list-posts__pane list-posts__pane--small"><img class="list-posts__image" src="public/img/mastodon.jpg" alt="image"></div>
-                <div class="list-posts__title">Mastodon, a much better twitter</div>
-                <div class="list-posts__content">
-                  Mastodon  isn’t just a website, it is a federation—think Star Trek. Thousands of independ…
-                  
-                </div></a></div>
+    <div class="common-links">
+      <div class="common-links__inner container">
+        <div class="common-links__section">
+          <div class="common-links__header">Latest blog posts</div>
+          <div class="common-links__content list-posts list-posts--dark-theme"><a class="list-posts__link" href="#">
+              <div class="list-posts__pane"><img class="list-posts__image" src="public/img/mastodon.jpg" alt="image"></div>
+              <div class="list-posts__title">Mastodon, a much better twitter</div>
+              <div class="list-posts__content">
+                Mastodon  isn’t just a website, 
+                it is a federation—think Star Trek. 
+                Thousands of independ…
+                
+              </div></a><a class="list-posts__link" href="#">
+              <div class="list-posts__pane"><img class="list-posts__image" src="public/img/acupuncture.jpg" alt="image"></div>
+              <div class="list-posts__title">The magic in acupuncture</div>
+              <div class="list-posts__content">
+                Acupuncture[a] is a form of alternative 
+                medicine and a key component of traditional 
+                Chine…
+                
+              </div></a></div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Labels</div>
+          <div class="common-links__content common-links__tags"><a class="common-links__tag" href="#">Health</a><a class="common-links__tag" href="#">Tech</a><a class="common-links__tag" href="#">Travel</a><a class="common-links__tag" href="#">Women</a>
           </div>
         </div>
-        <div class="last-info__section">
-          <div class="last-info__header">Labels</div>
-          <div class="last-info__content">
-            <div class="last-info__tags"><a class="last-info__tag" href="#">Health</a><a class="last-info__tag" href="#">Tech</a><a class="last-info__tag" href="#">Travel</a><a class="last-info__tag" href="#">Women</a></div>
-          </div>
-        </div>
-        <div class="last-info__section">
-          <div class="last-info__header">Comments</div>
-          <div class="last-info__content comments">
-            <div class="comments__item">
-              <div class="comments__pane"><img class="comments__image" src="public/img/coconut-oil.jpg" alt="image"></div><a class="comments__content" href="#"><b class="comments__user-name">TemplateUser:</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
+        <div class="common-links__section">
+          <div class="common-links__header">Comments</div>
+          <div class="common-links__content list-comments">
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/coconut-oil.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
             </div>
-            <div class="comments__item">
-              <div class="comments__pane"><img class="comments__image" src="public/img/acupuncture.jpg" alt="image"></div><a class="comments__content" href="#"><b class="comments__user-name">TemplateUser:</b>Lorem ipsum dolor sit amet consectetur adipisicing elit? </a>
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/acupuncture.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit? </a>
             </div>
-            <div class="comments__item">
-              <div class="comments__pane"><img class="comments__image" src="public/img/coconut-oil.jpg" alt="image"></div><a class="comments__content" href="#"><b class="comments__user-name">TemplateUser:</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/coconut-oil.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
             </div>
           </div>
         </div>
-        <div class="last-info__section">
-          <div class="last-info__header">Blogroll</div>
-          <div class="last-info__content">
-            <ul class="last-info__links">
-              <li class="last-info__item"><a class="last-info__link" href="#">Open Themes</a></li>
-              <li class="last-info__item"><a class="last-info__link" href="#">BTemplates Blog</a></li>
-              <li class="last-info__item"><a class="last-info__link" href="#">Blog and Web</a></li>
+        <div class="common-links__section">
+          <div class="common-links__header">Blogroll</div>
+          <div class="common-links__content">
+            <ul class="common-links__links">
+              <li class="common-links__item"><a class="common-links__link" href="#">Open Themes</a></li>
+              <li class="common-links__item"><a class="common-links__link" href="#">BTemplates Blog</a></li>
+              <li class="common-links__item"><a class="common-links__link" href="#">Blog and Web</a></li>
             </ul>
           </div>
         </div>
-        <div class="last-info__section">
-          <div class="last-info__header">Logo</div>
-          <div class="last-info__content">
-            <div class="last-info__brand">TemplateBlog</div>
+        <div class="common-links__section">
+          <div class="common-links__header">Logo</div>
+          <div class="common-links__content">
+            <div class="common-links__brand">TemplateBlog</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <div class="section footer">
       <div class="footer__inner container">
         <div class="footer__license">&copy; 2020 created by template<a class="footer__link" href="https://btemplates.com/2020/blogger-template-cihuatl/">Cihuatl</a></div>

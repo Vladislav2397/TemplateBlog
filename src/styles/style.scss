@@ -20,11 +20,10 @@
   'scss/commons/subscribe',
   'scss/commons/sections',
   'scss/commons/about',
-  'scss/commons/follow-me';
+  'scss/commons/follow-me',
+  'scss/commons/common-links',
+  'scss/commons/list-comments';
 
 @import
   'scss/layouts/container',
   'scss/layouts/section';
-
-@import
-  'scss/blocks/last-info/last-info';

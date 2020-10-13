@@ -1,4 +1,4 @@
-.last-info {
+.common-links {
   padding: 30px 0;
   margin-top: 20px;
   background-color: $dark;
@@ -72,6 +72,4 @@
     font-family: $font-coming-soon;
     color: $pink;
   }
-
-  @import 'comments/comments';
 }

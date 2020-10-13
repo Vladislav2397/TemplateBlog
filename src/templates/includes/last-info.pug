@@ -1,4 +1,4 @@
-section.last-info
+.last-info
   .last-info__inner.container
 
     .last-info__section
@@ -22,36 +22,35 @@ section.last-info
 
     .last-info__section
       .last-info__header Labels
-      .last-info__content
-        .last-info__tags
-          a.last-info__tag(href='#') Health
-          a.last-info__tag(href='#') Tech
-          a.last-info__tag(href='#') Travel
-          a.last-info__tag(href='#') Women
+      .last-info__content.last-info__tags
+        a.last-info__tag(href='#') Health
+        a.last-info__tag(href='#') Tech
+        a.last-info__tag(href='#') Travel
+        a.last-info__tag(href='#') Women
 
     .last-info__section
       .last-info__header Comments
-      .last-info__content.comments
+      .last-info__content.list-comments
 
-        .comments__item
-          .comments__pane
-            img.comments__image(src="public/img/coconut-oil.jpg", alt="image")
-          a.comments__content(href='#')
-            b.comments__user-name TemplateUser:
+        .list-comments__item
+          .list-comments__pane
+            img.list-comments__image(src="public/img/coconut-oil.jpg", alt="image")
+          a.list-comments__content(href='#')
+            b.list-comments__user-name TemplateUser
             | Lorem ipsum dolor sit amet consectetur adipisicing elit?
-        
-        .comments__item
-          .comments__pane
-            img.comments__image(src="public/img/acupuncture.jpg", alt="image")
-          a.comments__content(href='#')
-            b.comments__user-name TemplateUser:
+
+        .list-comments__item
+          .list-comments__pane
+            img.list-comments__image(src="public/img/acupuncture.jpg", alt="image")
+          a.list-comments__content(href='#')
+            b.list-comments__user-name TemplateUser
             | Lorem ipsum dolor sit amet consectetur adipisicing elit? 
 
-        .comments__item
-          .comments__pane
-            img.comments__image(src="public/img/coconut-oil.jpg", alt="image")
-          a.comments__content(href='#')
-            b.comments__user-name TemplateUser:
+        .list-comments__item
+          .list-comments__pane
+            img.list-comments__image(src="public/img/coconut-oil.jpg", alt="image")
+          a.list-comments__content(href='#')
+            b.list-comments__user-name TemplateUser
             | Lorem ipsum dolor sit amet consectetur adipisicing elit?
 
     .last-info__section

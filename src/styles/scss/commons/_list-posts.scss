@@ -1,24 +1,6 @@
 .list-posts {
   display: grid;
 
-  // &__item {
-  //   background-color: transparent;
-  //   transition: 0.5s;
-  //   margin: 5px 0;
-  //   border-bottom: 1px solid #ccc;
-  //   width: 100%;
-  //   min-height: 80px;
-  //   max-height: 100px;
-  //   overflow: hidden;
-  //   cursor: pointer;
-
-  //   &:hover {
-  //     background-color: $tercary;
-  //     .list-posts__pane { transform: rotateZ(-3deg); }
-  //     .list-posts__content { color: $dark }
-  //   }
-  // }
-
   &__link {
     background-color: transparent;
     transition: 0.5s;
@@ -33,7 +15,6 @@
     &:hover {
       background-color: $tercary;
       .list-posts__pane { transform: rotateZ(-3deg); }
-      .list-posts__content { color: $dark }
     }
   }
 
@@ -65,6 +46,9 @@
   &--dark-theme {
     .list-posts__content {
       color: $light;
+    }
+    .list-posts__link:hover .list-posts__content {
+      color: $dark;
     }
   }
 }
