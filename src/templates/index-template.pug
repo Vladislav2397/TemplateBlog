@@ -1,0 +1,22 @@
+extends doctype
+
+block body
+
+  include includes/navbar
+
+  .section.container
+    .section.header
+      .header__title TemplateBlog
+      | Lorem ipsum, dolor sit amet consectetur adipisicing elit!
+
+    include includes/carousel
+
+    .section.section--1fr-250
+      .section
+        block content
+
+      include includes/sidebar
+
+  include includes/common-links
+
+  include includes/footer

@@ -1,0 +1,54 @@
+.list-posts {
+  display: grid;
+
+  &__link {
+    background-color: transparent;
+    transition: 0.5s;
+    margin: 5px 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    min-height: 80px;
+    max-height: 100px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $tercary;
+      .list-posts__pane { transform: rotateZ(-3deg); }
+    }
+  }
+
+  &__pane {
+    width: 75px;
+    margin: 3px;
+    overflow: hidden;
+    transition: 0.5s;
+    float: left;
+  }
+
+  &__image {
+    width: 125%;
+  }
+
+  &__title {
+    font-size: $font-xs;
+    color: $pink-darker;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__content {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  &--dark-theme {
+    .list-posts__content {
+      color: $light;
+    }
+    .list-posts__link:hover .list-posts__content {
+      color: $dark;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.common-links
+  .common-links__inner.container
+
+    .common-links__section
+      .common-links__header Latest blog posts
+      .common-links__content.list-posts.list-posts--dark-theme
+        a.list-posts__link(href="#")
+          .list-posts__pane
+            img.list-posts__image(src="public/img/mastodon.jpg", alt="image")
+          .list-posts__title Mastodon, a much better twitter
+          .list-posts__content.
+            Mastodon  isn’t just a website, 
+            it is a federation—think Star Trek. 
+            Thousands of independ…
+
+        a.list-posts__link(href="#")
+          .list-posts__pane
+            img.list-posts__image(src="public/img/acupuncture.jpg", alt="image")
+          .list-posts__title The magic in acupuncture
+          .list-posts__content.
+            Acupuncture[a] is a form of alternative 
+            medicine and a key component of traditional 
+            Chine…
+
+    .common-links__section
+      .common-links__header Labels
+      .common-links__content.common-links__tags
+        each text in ["Health", "Tech", "Travel", "Women"]
+          a.common-links__tag(href='#')=text
+
+    .common-links__section
+      .common-links__header Comments
+      .common-links__content.list-comments
+
+        .list-comments__item
+          .list-comments__pane
+            img.list-comments__image(src="public/img/coconut-oil.jpg", alt="image")
+          a.list-comments__content(href='#')
+            b.list-comments__user-name TemplateUser
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit?
+
+        .list-comments__item
+          .list-comments__pane
+            img.list-comments__image(src="public/img/acupuncture.jpg", alt="image")
+          a.list-comments__content(href='#')
+            b.list-comments__user-name TemplateUser
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit? 
+
+        .list-comments__item
+          .list-comments__pane
+            img.list-comments__image(src="public/img/coconut-oil.jpg", alt="image")
+          a.list-comments__content(href='#')
+            b.list-comments__user-name TemplateUser
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit?
+
+    .common-links__section
+      .common-links__header Blogroll
+      .common-links__content
+        ul.common-links__links
+          each text in ["Open Themes", "BTemplates Blog", "Blog and Web"]
+            li.common-links__item
+              a.common-links__link(href="#")=text
+
+    .common-links__section
+      .common-links__header Logo
+      .common-links__content
+        .common-links__brand TemplateBlog

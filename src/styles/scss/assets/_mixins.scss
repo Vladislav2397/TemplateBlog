@@ -1,0 +1,32 @@
+@mixin display_flex($flex-direction: row,$justify-content: start,$align-items: start) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+
+@mixin display_grid($grid-temp-col: auto, $grid-temp-row: auto, $grid-gap: 0) {
+  display: grid;
+  grid-template-columns: $grid-temp-col;
+  grid-template-rows: $grid-temp-row;
+  grid-gap: $grid-gap;
+}
+
+@mixin media-screen($min-width) {
+  @media screen and ( min-width: $min-width ) {
+    @content;
+  }
+}
+
+@mixin media-screen-min($min-width) {
+  @media screen and ( min-width: $min-width ) {
+    @content;
+  }
+}
+
+@mixin media-screen-max($max-width) {
+  @media ( max-width: $max-width ) and ( min-width: 1px ) {
+    @content;
+  }
+}

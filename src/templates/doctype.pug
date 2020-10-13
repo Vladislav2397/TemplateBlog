@@ -1,0 +1,29 @@
+doctype html
+html
+  block variables
+
+  head
+    include includes/head
+
+    // My Style
+    link(rel="stylesheet", href="public/css/style.min.css")
+
+    // Font Awesome CDN
+    //- <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" integrity="sha384-3Nqiqht3ZZEO8FKj7GR1upiI385J92VwWNLj+FqHxtLYxd9l+WYpeqSOrLh0T12c" crossorigin="anonymous"></script>
+
+    // Font Awesome local
+    link(rel="stylesheet", href="public/libs/fontawesome-5/css/all.min.css")
+    script(src="public/libs/fontawesome-5/js/all.min.js")
+
+    // Vue JS CDN
+    //- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+    // Vue JS local
+    script(src="public/libs/vue/vue.min.js")
+
+    title=page_title
+
+  body
+    block body
+
+    include includes/script

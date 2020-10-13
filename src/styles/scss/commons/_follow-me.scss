@@ -1,0 +1,42 @@
+.follow-me {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  color: $gray;
+  font-size: $font-xl;
+
+  &__link {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    transition: 0.8s;
+
+    &--vk:hover {
+      background: $vk-color;
+    }
+
+    &--youtube:hover {
+      background: $youtube-color;
+    }
+
+    &--facebook:hover {
+      background: $facebook-color;
+    }
+
+    &--instagram:hover {
+      background: $instagram-color;
+    }
+
+    &--pinterest:hover {
+      background: $pinterest-color;
+    }
+
+    &:hover .follow-me__icon {
+      color: $light;
+    }
+  }
+}

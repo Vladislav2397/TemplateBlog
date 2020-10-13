@@ -10,8 +10,8 @@ const
   browserSync = require('browser-sync');
 
 
-function sassConvert(done) {
-  gulp.src("./src/styles/**/*.sass")
+function sassCompiler(done) {
+  gulp.src("./src/styles/**/*.scss")
     .pipe(sourcemaps.init())
     .pipe(sass({
       errorLogToConsole: true,
@@ -45,8 +45,8 @@ function browserReload(done) {
 }
 
 
-function buildHTML(done) {
-  gulp.src("./src/pages/common/*.pug")
+function pugCompiler(done) {
+  gulp.src("./src/templates/pages/*.pug")
     .pipe(pug({
       pretty: true
     }))
@@ -63,19 +63,17 @@ function minifyJS(done) {
         min: '.min.js'
       },
     }))
-    .pipe(concat('script.js'))
+    .on('error', console.error.bind(console))
     .pipe(gulp.dest('./dist/public/js'));
   done();
 }
 
 
 function gulpWatchFiles() {
-  gulp.watch('./src/styles/**/*.sass', sassConvert);
-  gulp.watch('./src/pages/**/*.pug', buildHTML);
+  gulp.watch('./src/styles/**/*.scss', sassCompiler);
+  gulp.watch('./src/templates/**/*.pug', pugCompiler);
   gulp.watch('./src/scripts/*.js', minifyJS);
-  gulp.watch("./dist/**/*.html", browserReload);
-  gulp.watch("./dist/styles/**/*.css", browserReload);
-  gulp.watch("./dist/scripts/**/*.js", browserReload);
+  gulp.watch("./dist/**/*", browserReload);
 }
 
 

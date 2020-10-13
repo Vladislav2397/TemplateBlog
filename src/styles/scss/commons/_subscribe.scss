@@ -1,0 +1,41 @@
+.subscribe {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  padding: 20px 10px;
+  background-color: $pink;
+  position: relative;
+  font-size: $font-sm;
+  overflow: hidden;
+  text-align: center;
+
+  &:hover .subscribe__icon {
+    transform: rotateZ(5deg);
+  }
+
+  &__description {
+    padding-bottom: 10px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    transition: 0.5s;
+    opacity: 0.6;
+    transform: rotateZ(20deg);
+    font-size: $font-brand-md;
+    color: $light;
+  }
+
+  &__header {
+    padding: 0 70px;
+    font-family: cursive;
+    font-size: $font-title-lg;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px dotted $dark;
+  }
+}

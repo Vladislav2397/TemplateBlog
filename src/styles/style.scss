@@ -1,0 +1,29 @@
+@import
+  'scss/assets/variables',
+  'scss/assets/fonts',
+  'scss/assets/mixins';
+
+@import
+  'scss/base/base';
+
+@import
+  'scss/commons/navbar',
+  'scss/commons/footer',
+  'scss/commons/form-inline',
+  'scss/commons/list-posts',
+  'scss/commons/dropdown',
+  'scss/commons/text',
+  'scss/commons/carousel',
+  'scss/commons/article',
+  'scss/commons/header',
+  'scss/commons/sidebar',
+  'scss/commons/subscribe',
+  'scss/commons/sections',
+  'scss/commons/about',
+  'scss/commons/follow-me',
+  'scss/commons/common-links',
+  'scss/commons/list-comments';
+
+@import
+  'scss/layouts/container',
+  'scss/layouts/section';

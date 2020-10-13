@@ -1,0 +1,34 @@
+extends ../index-template
+
+block variables
+  - var page_title = "Home"
+
+block content
+  #articles
+    .article(v-for="item in items")
+      a.article__header(:href='item.link') {{ item.title }}
+      .article__pub-date
+        i.far.fa-clock
+        | {{ item.pubDate }}
+      .article__body
+        a.article__pane(:href='item.link')
+          img.article__image(:src='item.imageSrc', alt="Article image")
+        .article__tags
+          a.article__tag(v-for="tag in item.tags" :href='tag.link') {{ tag.text }}
+        .article__content {{ item.content }}
+        .article__functions
+          .article__btn Read More
+          .article__links.text--xl.text--gray
+            a.article__link.text--h-whatsapp(href="#")
+              i.article__icon.fab.fa-whatsapp
+            a.article__link.text--h-twitter(href="#")
+              i.article__icon.fab.fa-twitter
+            a.article__link.text--h-pinterest(href="#")
+              i.article__icon.fab.fa-pinterest-p
+            a.article__link.text--h-facebook(href="#")
+              i.article__icon.fab.fa-facebook-f
+            a.article__link.text--h-mail(href="#")
+              i.article__icon.far.fa-envelope-open
+          .article__post Post a Comment
+
+  // TODO: Carousel infinite

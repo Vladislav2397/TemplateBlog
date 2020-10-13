@@ -1,0 +1,18 @@
+.section {
+  width: 100%;
+  display: grid;
+
+  &--1fr-250 {
+    grid-template-columns: 1fr 250px;
+    grid-gap: 0 40px;
+    align-items: start;
+  }
+
+  &--3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__content {
+    width: 100%;
+  }
+}

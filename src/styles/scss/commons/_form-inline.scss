@@ -1,0 +1,48 @@
+.form-inline {
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: auto auto;
+  overflow: hidden;
+  background: $light;
+  font-size: $font-lg;
+
+  &__field {
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  &__btn {
+    width: 40px;
+    height: 100%;
+    border-radius: 0 3px 3px 0;
+    color: $light;
+    font-size: $font-xl;
+    transition: 0.5s;
+    background: $dark;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #000;
+    }
+  }
+
+  &--light-theme {
+    border: 1px solid $light;
+    background: transparent;
+
+    .form-inline__field {
+      color: $light;
+    }
+
+    .form-inline__btn:hover {
+      background-color: $light;
+      color: $dark;
+    }
+  }
+
+  &--small {
+    height: 35px;
+  }
+}

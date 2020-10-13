@@ -5,11 +5,190 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- My Style-->
     <link rel="stylesheet" href="public/css/style.min.css">
+    <!-- Font Awesome CDN-->
+    <!-- Font Awesome local-->
+    <link rel="stylesheet" href="public/libs/fontawesome-5/css/all.min.css">
+    <script src="public/libs/fontawesome-5/js/all.min.js"></script>
+    <!-- Vue JS CDN-->
+    <!-- Vue JS local-->
+    <script src="public/libs/vue/vue.min.js"></script>
     <title>Home</title>
   </head>
-  <body class="home-page">
-    <h1>Hello from Gulp</h1>
-    <script src="public/js/script.js"></script>
+  <body>
+    <nav class="section navbar" id="navbar">
+      <div class="navbar__inner container"><a class="navbar__section navbar__brand" href="/">TemplateBlog</a>
+        <div class="navbar__section navbar__links navbar__section--expand-hidden"><a class="navbar__link" href="/">Home</a>
+          <div class="navbar__link dropdown">Dropdown
+            <div class="dropdown__menu"><a class="navbar__link dropdown__link" v-for="link in dropdownLinks" href="#">{{ link }}</a></div>
+          </div><a class="navbar__link" href="#">Services</a><a class="navbar__link" href="#">Link</a>
+        </div>
+        <div class="navbar__section navbar__section--expand-hidden">
+          <form class="form-inline form-inline--light-theme form-inline--small">
+            <input class="form-inline__field" type="text" placeholder="Search this blog">
+            <button class="form-inline__btn"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+        <div class="navbar__section navbar__section--expand-show">
+          <button class="navbar__btn"><i class="text--xl fas fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+    <div class="section container">
+      <div class="section header">
+        <div class="header__title">TemplateBlog</div>Lorem ipsum, dolor sit amet consectetur adipisicing elit!
+      </div>
+      <div class="carousel" id="carousel">
+        <button class="carousel__btn carousel__btn--left" @click="left"><i class="fas fa-chevron-left carousel__icon"></i></button>
+        <div class="carousel__gallery" :style="{ transform: `translateX(-${100 * counter}%)` }">
+          <div class="carousel__item" v-for="item in items"><img class="carousel__image" :src="item.imageSrc" alt="image">
+            <div class="carousel__content">
+              <div class="carousel__link"><a class="carousel__title" :href="item.link">{{ item.title }}</a><a class="carousel__text" :href="item.link">{{ item.text }}</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__controls">
+          <button class="carousel__control" v-for="item in items.length" :class="{ 'carousel__control--active' : isActive(item - 1) }"></button>
+        </div>
+        <button class="carousel__btn carousel__btn--right" @click="right"><i class="fas fa-chevron-right carousel__icon"></i></button>
+      </div>
+      <div class="section section--1fr-250">
+        <div class="section">
+          <div id="articles">
+            <div class="article" v-for="item in items"><a class="article__header" :href="item.link">{{ item.title }}</a>
+              <div class="article__pub-date"><i class="far fa-clock"></i>{{ item.pubDate }}</div>
+              <div class="article__body"><a class="article__pane" :href="item.link"><img class="article__image" :src="item.imageSrc" alt="Article image"></a>
+                <div class="article__tags"><a class="article__tag" v-for="tag in item.tags" :href="tag.link">{{ tag.text }}</a></div>
+                <div class="article__content">{{ item.content }}</div>
+                <div class="article__functions">
+                  <div class="article__btn">Read More</div>
+                  <div class="article__links text--xl text--gray"><a class="article__link text--h-whatsapp" href="#"><i class="article__icon fab fa-whatsapp"></i></a><a class="article__link text--h-twitter" href="#"><i class="article__icon fab fa-twitter"></i></a><a class="article__link text--h-pinterest" href="#"><i class="article__icon fab fa-pinterest-p"></i></a><a class="article__link text--h-facebook" href="#"><i class="article__icon fab fa-facebook-f"></i></a><a class="article__link text--h-mail" href="#"><i class="article__icon far fa-envelope-open"></i></a></div>
+                  <div class="article__post">Post a Comment</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TODO: Carousel infinite-->
+        </div>
+        <div class="section sidebar">
+          <div class="sidebar__item">
+            <div class="sidebar__header">Subscribe</div>
+            <div class="sidebar__content subscribe"><i class="fas fa-envelope subscribe__icon"></i>
+              <div class="subscribe__header">Subscribe!</div>
+              <div class="subscribe__description">Subscribe for free to get 1 mail per week.</div>
+              <form class="form-inline">
+                <input class="form-inline__field" type="text" placeholder="Email Address">
+                <button class="form-inline__btn"><i class="far fa-paper-plane form-inline__icon"></i></button>
+              </form>
+            </div>
+          </div>
+          <div class="sidebar__item">
+            <div class="sidebar__header">Sections</div>
+            <div class="sidebar__content sections"><a class="sections__item" href="#"><img src="public/img/mindfulness.jpg" alt="Image" width="300">
+                <div class="sections__tag">Health</div></a><a class="sections__item" href="#"><img src="public/img/mastodon.jpg" alt="Image" width="300">
+                <div class="sections__tag">Tech</div></a><a class="sections__item" href="#"><img src="public/img/acupuncture.jpg" alt="Image" width="300">
+                <div class="sections__tag">Travel</div></a><a class="sections__item" href="#"><img src="public/img/coconut-oil.jpg" alt="Image" width="300">
+                <div class="sections__tag">Women</div></a></div>
+          </div>
+          <div class="sidebar__item">
+            <div class="sidebar__header">trending now</div>
+            <div class="sidebar__content list-posts"><a class="list-posts__link" href="#">
+                <div class="list-posts__pane"><img class="list-posts__image" src="public/img/mastodon.jpg" alt="image"></div>
+                <div class="list-posts__title">Mastodon, a much better twitter</div>
+                <div class="list-posts__content">
+                  Mastodon  isn’t just a website, 
+                  it is a federation—think Star Trek. 
+                  Thousands of independ…
+                  
+                </div></a><a class="list-posts__link" href="#">
+                <div class="list-posts__pane"><img class="list-posts__image" src="public/img/acupuncture.jpg" alt="image"></div>
+                <div class="list-posts__title">The magic in acupuncture</div>
+                <div class="list-posts__content">
+                  Acupuncture[a] is a form of alternative 
+                  medicine and a key component of traditional 
+                  Chine…
+                  
+                </div></a></div>
+          </div>
+          <div class="sidebar__item">
+            <div class="sidebar__header">About me</div>
+            <div class="sidebar__content about"><a href="#"><img class="about__image" src="" alt="image"></a><a class="about__content" href="#">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque odit reprehenderit nobis quaerat repudiandae accusamus ipsa rerum vero.
+                </a></div>
+          </div>
+          <div class="sidebar__item">
+            <div class="sidebar__header">Follow me</div>
+            <div class="sidebar__content follow-me"><a class="follow-me__link follow-me__link--vk" href="#"><i class="follow-me__icon fab fa-vk"></i></a><a class="follow-me__link follow-me__link--youtube" href="#"><i class="follow-me__icon fab fa-youtube"></i></a><a class="follow-me__link follow-me__link--facebook" href="#"><i class="follow-me__icon fab fa-facebook-f"></i></a><a class="follow-me__link follow-me__link--instagram" href="#"><i class="follow-me__icon fab fa-instagram"></i></a><a class="follow-me__link follow-me__link--pinterest" href="#"><i class="follow-me__icon fab fa-pinterest-p"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="common-links">
+      <div class="common-links__inner container">
+        <div class="common-links__section">
+          <div class="common-links__header">Latest blog posts</div>
+          <div class="common-links__content list-posts list-posts--dark-theme"><a class="list-posts__link" href="#">
+              <div class="list-posts__pane"><img class="list-posts__image" src="public/img/mastodon.jpg" alt="image"></div>
+              <div class="list-posts__title">Mastodon, a much better twitter</div>
+              <div class="list-posts__content">
+                Mastodon  isn’t just a website, 
+                it is a federation—think Star Trek. 
+                Thousands of independ…
+                
+              </div></a><a class="list-posts__link" href="#">
+              <div class="list-posts__pane"><img class="list-posts__image" src="public/img/acupuncture.jpg" alt="image"></div>
+              <div class="list-posts__title">The magic in acupuncture</div>
+              <div class="list-posts__content">
+                Acupuncture[a] is a form of alternative 
+                medicine and a key component of traditional 
+                Chine…
+                
+              </div></a></div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Labels</div>
+          <div class="common-links__content common-links__tags"><a class="common-links__tag" href="#">Health</a><a class="common-links__tag" href="#">Tech</a><a class="common-links__tag" href="#">Travel</a><a class="common-links__tag" href="#">Women</a>
+          </div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Comments</div>
+          <div class="common-links__content list-comments">
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/coconut-oil.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
+            </div>
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/acupuncture.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit? </a>
+            </div>
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/coconut-oil.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
+            </div>
+          </div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Blogroll</div>
+          <div class="common-links__content">
+            <ul class="common-links__links">
+              <li class="common-links__item"><a class="common-links__link" href="#">Open Themes</a></li>
+              <li class="common-links__item"><a class="common-links__link" href="#">BTemplates Blog</a></li>
+              <li class="common-links__item"><a class="common-links__link" href="#">Blog and Web</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Logo</div>
+          <div class="common-links__content">
+            <div class="common-links__brand">TemplateBlog</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section footer">
+      <div class="footer__inner container">
+        <div class="footer__license">&copy; 2020 created by template<a class="footer__link" href="https://btemplates.com/2020/blogger-template-cihuatl/">Cihuatl</a></div>
+        <div class="footer__links"><a class="footer__link" href="#">Home</a><a class="footer__link" href="#">Contacts</a></div>
+      </div>
+    </div>
+    <script src="public/js/script.min.js"></script>
   </body>
 </html>

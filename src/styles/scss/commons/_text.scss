@@ -1,0 +1,86 @@
+.text {
+
+  // * Fonts
+  &--brand {
+    &-md {
+      font-size: $font-brand-md;
+    }
+  }
+  &--title {
+    &-xl { font-size: $font-title-xl }
+    &-lg { font-size: $font-title-lg }
+    &-md { font-size: $font-title-md }
+    &-sm { font-size: $font-title-sm }
+  }
+
+  &--xl { font-size: $font-xl }
+  &--lg { font-size: $font-lg }
+  &--md { font-size: $font-md }
+  &--sm { font-size: $font-sm }
+  &--xs { font-size: $font-xs }
+
+  // * Colors
+  &--dark { color: $dark }
+  &--light { color: $light }
+  &--gray { color: $gray }
+  &--pink { color: $pink }
+  &--pink-darker { color: $pink-darker }
+
+  &--c {
+    &-facebook {
+      color: $facebook-color
+    }
+    &-instagram {
+      color: $instagram-color
+    }
+    &-pinterest {
+      color: $pinterest-color
+    }
+    &-vk {
+      color: $vk-color
+    }
+    &-twitter {
+      color: $twitter-color
+    }
+    &-youtube {
+      color: $youtube-color
+    }
+    &-whatsapp {
+      color: $whatsapp-color
+    }
+    &-mail {
+      color: $mail-color
+    }
+  }
+
+  &--h {
+    &-facebook:hover {
+      color: $facebook-color
+    }
+    &-instagram:hover {
+      color: $instagram-color
+    }
+    &-pinterest:hover {
+      color: $pinterest-color
+    }
+    &-vk:hover {
+      color: $vk-color
+    }
+    &-twitter:hover {
+      color: $twitter-color
+    }
+    &-youtube:hover {
+      color: $youtube-color
+    }
+    &-whatsapp:hover {
+      color: $whatsapp-color
+    }
+    &-mail:hover {
+      color: $mail-color;
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+}

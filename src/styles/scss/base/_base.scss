@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  font-family: $font-open-sans, sans-serif;
+}
+
+i, p, a, div, button, form, input {
+  color: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, input[type='text'], input[type='button'] {
+  border: none;
+  background: transparent;
+}
