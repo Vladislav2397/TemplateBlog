@@ -1,23 +1,25 @@
 .carousel#carousel
 
-  button.carousel__btn.carousel__btn--left(@click="left")
-    i.fas.fa-chevron-left.carousel__icon
+	button.carousel__btn.carousel__btn--left(@click="left")
+		i.fas.fa-chevron-left.carousel__icon
 
-  .carousel__gallery(
-    :style="{ transform: `translateX(-${100 * counter}%)` }"
-  )
-    .carousel__item(v-for="item in items")
-      img.carousel__image(:src="item.imageSrc", alt="image")
-      .carousel__content
-        .carousel__link
-          a.carousel__title(:href="item.link") {{ item.title }}
-          a.carousel__text(:href="item.link") {{ item.text }}
+	.carousel__gallery(
+		:style="{ transform: `translateX(-${100 * counter}%)` }"
+	)
+		each item in carousel_items
+			.carousel__item
+				img.carousel__image(src=item.imageSrc, alt="image")
+				.carousel__content
+					.carousel__link
+						a.carousel__title(href=item.link)=item.title
+						- let text = item.content.length > 100 ? item.content.substr(0, 100) + "..." : item.content
+							a.carousel__text(href=item.link)=text
 
-  .carousel__controls
-    button.carousel__control(
-      v-for="item in items.length"
-      :class="{ 'carousel__control--active' : isActive(item - 1) }"
-    )
+	.carousel__controls
+		button.carousel__control(
+			v-for="item in itemsCount"
+			:class="{ 'carousel__control--active' : isActive(item - 1) }"
+		)
 
-  button.carousel__btn.carousel__btn--right(@click="right")
-    i.fas.fa-chevron-right.carousel__icon
+	button.carousel__btn.carousel__btn--right(@click="right")
+		i.fas.fa-chevron-right.carousel__icon

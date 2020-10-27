@@ -1,76 +1,56 @@
-.section.sidebar
+.sidebar
 
-  .sidebar__item
-    .sidebar__header Subscribe
-    .sidebar__content.subscribe
-      i.fas.fa-envelope.subscribe__icon
-      .subscribe__header Subscribe!
-      .subscribe__description.
-        Subscribe for free to get 1 mail per week.
-      form.form-inline
-        input.form-inline__field(type="text" placeholder="Email Address")
-        button.form-inline__btn
-            i.far.fa-paper-plane.form-inline__icon
+	.sidebar__item
+		.sidebar__header Subscribe
+		.sidebar__content.subscribe
+			i.fas.fa-envelope.subscribe__icon
+			.subscribe__header Subscribe!
+			.subscribe__description.
+				Subscribe for free to get 1 mail per week.
+			form.form-inline
+				input.form-inline__field(type="text" placeholder="Email Address")
+				button.form-inline__btn
+					i.far.fa-paper-plane.form-inline__icon
 
-  .sidebar__item
-    .sidebar__header Sections
-    .sidebar__content.sections
+	.sidebar__item
+		.sidebar__header Sections
+		.sidebar__content.sections
 
-      a.sections__item(href="#")
-        img(src="public/img/mindfulness.jpg", alt="Image" width="300")
-        .sections__tag Health
+			each val, key in tags
+				a.sections__item(href="#")
+					img(src=`public/img/${val}.jpg`, alt="Image" width="300")
+					.sections__tag=key
 
-      a.sections__item(href="#")
-        img(src="public/img/mastodon.jpg", alt="Image" width="300")
-        .sections__tag Tech
+	.sidebar__item
+		.sidebar__header trending now
+		.sidebar__content.list-posts
+			each item in list_posts
+				a.list-posts__link(href="article-detail.html")
+					.list-posts__pane
+						img.list-posts__image(src=item.imageSrc, alt="image")
+					.list-posts__title=item.title
+					- let text = item.content.length > 100 ? item.content.substr(0, 100) + "..." : item.content
+						.list-posts__content=text
 
-      a.sections__item(href="#")
-        img(src="public/img/acupuncture.jpg", alt="Image" width="300")
-        .sections__tag Travel
+	.sidebar__item
+		.sidebar__header About me
+		.sidebar__content.about
+			a.about__pane(href='#')
+				img.about__image(src="public/img/avatar.jpg", alt="image")
+			a.about__title TemplateBlog
+			a.about__content(href='#').
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque odit reprehenderit nobis quaerat repudiandae accusamus ipsa rerum vero.
 
-      a.sections__item(href="#")
-        img(src="public/img/coconut-oil.jpg", alt="Image" width="300")
-        .sections__tag Women
-
-  .sidebar__item
-    .sidebar__header trending now
-    .sidebar__content.list-posts
-      a.list-posts__link(href="#")
-        .list-posts__pane
-          img.list-posts__image(src="public/img/mastodon.jpg", alt="image")
-        .list-posts__title Mastodon, a much better twitter
-        .list-posts__content.
-          Mastodon  isn’t just a website, 
-          it is a federation—think Star Trek. 
-          Thousands of independ…
-
-      a.list-posts__link(href="#")
-        .list-posts__pane
-          img.list-posts__image(src="public/img/acupuncture.jpg", alt="image")
-        .list-posts__title The magic in acupuncture
-        .list-posts__content.
-          Acupuncture[a] is a form of alternative 
-          medicine and a key component of traditional 
-          Chine…
-
-  .sidebar__item
-    .sidebar__header About me
-    .sidebar__content.about
-      a(href='#')
-        img.about__image(src="", alt="image")
-      a.about__content(href='#').
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque odit reprehenderit nobis quaerat repudiandae accusamus ipsa rerum vero.
-
-  .sidebar__item
-    .sidebar__header Follow me
-    .sidebar__content.follow-me
-      a.follow-me__link.follow-me__link--vk(href="#")
-        i.follow-me__icon.fab.fa-vk
-      a.follow-me__link.follow-me__link--youtube(href="#")
-        i.follow-me__icon.fab.fa-youtube
-      a.follow-me__link.follow-me__link--facebook(href="#")
-        i.follow-me__icon.fab.fa-facebook-f
-      a.follow-me__link.follow-me__link--instagram(href="#")
-        i.follow-me__icon.fab.fa-instagram
-      a.follow-me__link.follow-me__link--pinterest(href="#")
-        i.follow-me__icon.fab.fa-pinterest-p
+	.sidebar__item
+		.sidebar__header Follow me
+		.sidebar__content.follow-me
+			a.follow-me__link.follow-me__link--vk(href="#")
+				i.follow-me__icon.fab.fa-vk
+			a.follow-me__link.follow-me__link--youtube(href="#")
+				i.follow-me__icon.fab.fa-youtube
+			a.follow-me__link.follow-me__link--facebook(href="#")
+				i.follow-me__icon.fab.fa-facebook-f
+			a.follow-me__link.follow-me__link--instagram(href="#")
+				i.follow-me__icon.fab.fa-instagram
+			a.follow-me__link.follow-me__link--pinterest(href="#")
+				i.follow-me__icon.fab.fa-pinterest-p

@@ -1,25 +1,26 @@
-nav.section.navbar#navbar
+nav.section.navbar#navbar(:class="{ 'navbar--show' : isShow }")
   .navbar__inner.container
 
-    a.navbar__section.navbar__brand(href='/') TemplateBlog
-
-    .navbar__section.navbar__links.navbar__section--expand-hidden
-      a.navbar__link(href='/') Home
-      .navbar__link.dropdown Dropdown
-        .dropdown__menu
-          a.navbar__link.dropdown__link(
-            v-for="link in dropdownLinks"
-            href="#"
-          ) {{ link }}
-      a.navbar__link(href='#') Services
-      a.navbar__link(href='#') Link
+    a.navbar__section.navbar__brand(href="/") TemplateBlog
 
     .navbar__section.navbar__section--expand-hidden
+      .navbar__links
+        a.navbar__link(href="/") Home
+        a.navbar__link(href="add-article.html") Add article
+        .navbar__link.dropdown Dropdown
+          .dropdown__menu
+            a.navbar__link.dropdown__link(
+              v-for="link in dropdownLinks"
+              href="#"
+            ) {{ link }}
+        a.navbar__link(href="#") Services
+
+    .navbar__form.navbar__section.navbar__section--expand-hidden
       form.form-inline.form-inline--light-theme.form-inline--small
-        input.form-inline__field(type='text' placeholder='Search this blog')
+        input.form-inline__field(type="text" placeholder="Search this blog")
         button.form-inline__btn
           i.fas.fa-search
 
     .navbar__section.navbar__section--expand-show
-      button.navbar__btn
-        i.text--xl.fas.fa-bars
+      button.navbar__btn(@click="isShow = !isShow")
+        i.fas.fa-bars

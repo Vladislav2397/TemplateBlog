@@ -3,12 +3,46 @@
   justify-items: center;
   align-items: center;
 
-  &__image {
+  &--inline {
+    grid-template-columns: min-content auto;
+    grid-gap: 0 20px;
+    justify-items: flex-start;
+    width: 75%;
+    margin: 20px 0;
+
+    .about__pane {
+      grid-row: 1 / 3;
+    }
+
+    .about__content {
+      grid-column: 2 / 3;
+      text-align: justify;
+    }
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: $font-xl;
+    font-family: $font-coming-soon;
+    margin: 5px 0;
+  }
+
+  .about__pane {
+    width: 175px;
+    height: 175px;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background-color: $pink;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+  }
+
+  &__image {
+    height: 100%;
+    width: auto;
+    background-color: $pink;
     display: grid;
     justify-items: center;
     align-items: center;

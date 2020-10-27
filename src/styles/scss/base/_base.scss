@@ -10,7 +10,9 @@ body {
   font-family: $font-open-sans, sans-serif;
 }
 
-i, p, a, div, button, form, input {
+i, p, a, div, button,
+form, input, textarea,
+select, option, label {
   color: inherit;
   font-size: inherit;
 }
@@ -19,7 +21,6 @@ a {
   text-decoration: none;
 }
 
-button, input[type='text'], input[type='button'] {
-  border: none;
-  background: transparent;
+input[type="checkbox"] {
+  margin: 0 5px;
 }

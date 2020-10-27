@@ -1,0 +1,10 @@
+.related-posts
+  .related-posts__header Related posts
+  .related-posts__items
+    each item in related_posts
+      a.related-posts__item(href=item.link)
+        .related-posts__pane
+          img.related-posts__image(src=item.imageSrc, alt="image" width="400")
+        - let tags = item.tags.map(elem => elem.text).join(", ")
+          .related-posts__tags=tags
+        .related-posts__title=item.title

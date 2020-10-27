@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- My Style-->
+    <link rel="stylesheet" href="public/css/style.min.css">
+    <!-- Font Awesome CDN-->
+    <!-- Font Awesome local-->
+    <link rel="stylesheet" href="public/libs/fontawesome-5/css/all.min.css">
+    <script src="public/libs/fontawesome-5/js/all.min.js"></script>
+    <!-- Vue JS CDN-->
+    <!-- Vue JS local-->
+    <script src="public/libs/vue/vue.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <nav class="section navbar" id="navbar" :class="{ 'navbar--show' : isShow }">
+      <div class="navbar__inner container"><a class="navbar__section navbar__brand" href="/">TemplateBlog</a>
+        <div class="navbar__section navbar__section--expand-hidden">
+          <div class="navbar__links"><a class="navbar__link" href="/">Home</a><a class="navbar__link" href="add-article.html">Add article</a>
+            <div class="navbar__link dropdown">Dropdown
+              <div class="dropdown__menu"><a class="navbar__link dropdown__link" v-for="link in dropdownLinks" href="#">{{ link }}</a></div>
+            </div><a class="navbar__link" href="#">Services</a>
+          </div>
+        </div>
+        <div class="navbar__form navbar__section navbar__section--expand-hidden">
+          <form class="form-inline form-inline--light-theme form-inline--small">
+            <input class="form-inline__field" type="text" placeholder="Search this blog">
+            <button class="form-inline__btn"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+        <div class="navbar__section navbar__section--expand-show">
+          <button class="navbar__btn" @click="isShow = !isShow"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+    <div class="section container">
+      <div class="section header">
+        <div class="header__title">TemplateBlog</div>Lorem ipsum, dolor sit amet consectetur adipisicing elit!
+      </div>
+      <div class="section section--1fr-250">
+        <form class="grid-layout grid-layout--add-article-form add-article-form" method="post">
+          <input class="grid-layout--span2 add-article-form__input" type="text" placeholder="input title article" name="title">
+          <div class="add-article-form__header">Public date<span>(You can't choose date. Select now date)</span></div>
+          <div class="add-article-form__header">Tags <span>(You can choose several)</span></div>
+          <div class="add-article-form__pub-date"><i class="far fa-clock"></i>&nbsp;July, 15 2020</div>
+          <select class="add-article-form__tags" name="tags" multiple>
+            <option class="add-article-form__tag" value="Health">Health</option>
+            <option class="add-article-form__tag" value="Tech">Tech</option>
+            <option class="add-article-form__tag" value="Travel">Travel</option>
+            <option class="add-article-form__tag" value="Women">Women</option>
+          </select><img class="add-article-form__pane" src="" alt="Image" id="preview">
+          <div class="add-article-form__select-file">
+            <input class="add-article-form--hidden" type="file" name="image" id="file" onchange="previewImage()">
+            <label class="add-article-form__select" for="file" id="file-btn">Upload image</label>
+          </div>
+          <textarea class="grid-layout--span2 add-article-form__textarea" type="text" placeholder="Article content" name="content"></textarea>
+          <input class="add-article-form__btn" type="submit" value="Send">
+        </form>
+        <script src="public/js/loadImage.js"></script>
+        <div class="sidebar">
+          <div class="sidebar__item">
+            <div class="sidebar__header">Subscribe</div>
+            <div class="sidebar__content subscribe"><i class="fas fa-envelope subscribe__icon"></i>
+              <div class="subscribe__header">Subscribe!</div>
+              <div class="subscribe__description">Subscribe for free to get 1 mail per week.</div>
+              <form class="form-inline">
+                <input class="form-inline__field" type="text" placeholder="Email Address">
+                <button class="form-inline__btn"><i class="far fa-paper-plane form-inline__icon"></i></button>
+              </form>
+            </div>
+          </div>
+          <div class="sidebar__item">
+            <div class="sidebar__header">Sections</div>
+            <div class="sidebar__content sections"><a class="sections__item" href="#"><img src="public/img/mindfulness.jpg" alt="Image" width="300">
+                <div class="sections__tag">Health</div></a><a class="sections__item" href="#"><img src="public/img/mastodon.jpg" alt="Image" width="300">
+                <div class="sections__tag">Tech</div></a><a class="sections__item" href="#"><img src="public/img/acupuncture.jpg" alt="Image" width="300">
+                <div class="sections__tag">Travel</div></a><a class="sections__item" href="#"><img src="public/img/coconut-oil.jpg" alt="Image" width="300">
+                <div class="sections__tag">Women</div></a>
+            </div>
+          </div>
+          <div class="sidebar__item">
+            <div class="sidebar__header">trending now</div>
+            <div class="sidebar__content list-posts"><a class="list-posts__link" href="article-detail.html">
+                <div class="list-posts__pane"><img class="list-posts__image" src="public/img/mastodon.jpg" alt="image"></div>
+                <div class="list-posts__title">Mastodon, a much better twitter</div>
+                <div class="list-posts__content">Mastodon isn’t just a website, it is a federation—think Star Trek. Thousands of independent communit...</div></a><a class="list-posts__link" href="article-detail.html">
+                <div class="list-posts__pane"><img class="list-posts__image" src="public/img/mindfulness.jpg" alt="image"></div>
+                <div class="list-posts__title">What is Mindfulness?</div>
+                <div class="list-posts__content">Mindfulness is the psychological process of purposely bringing one's attention to experiences occurr...</div></a><a class="list-posts__link" href="article-detail.html">
+                <div class="list-posts__pane"><img class="list-posts__image" src="public/img/yalitza-aparicio.jpg" alt="image"></div>
+                <div class="list-posts__title">Oscars’ First indigenous actress mominee</div>
+                <div class="list-posts__content">Yalitza Aparicio was the Oscars’ first indigenous mexican actress nominee. Cihuatl is a Free CSS, Bl...</div></a>
+            </div>
+          </div>
+          <div class="sidebar__item">
+            <div class="sidebar__header">About me</div>
+            <div class="sidebar__content about"><a class="about__pane" href="#"><img class="about__image" src="public/img/avatar.jpg" alt="image"></a><a class="about__title">TemplateBlog</a><a class="about__content" href="#">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque odit reprehenderit nobis quaerat repudiandae accusamus ipsa rerum vero.
+                </a></div>
+          </div>
+          <div class="sidebar__item">
+            <div class="sidebar__header">Follow me</div>
+            <div class="sidebar__content follow-me"><a class="follow-me__link follow-me__link--vk" href="#"><i class="follow-me__icon fab fa-vk"></i></a><a class="follow-me__link follow-me__link--youtube" href="#"><i class="follow-me__icon fab fa-youtube"></i></a><a class="follow-me__link follow-me__link--facebook" href="#"><i class="follow-me__icon fab fa-facebook-f"></i></a><a class="follow-me__link follow-me__link--instagram" href="#"><i class="follow-me__icon fab fa-instagram"></i></a><a class="follow-me__link follow-me__link--pinterest" href="#"><i class="follow-me__icon fab fa-pinterest-p"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="common-links">
+      <div class="common-links__inner container">
+        <div class="common-links__section">
+          <div class="common-links__header">Latest blog posts</div>
+          <div class="common-links__content list-posts list-posts--dark-theme"><a class="list-posts__link" href="article-detail.html">
+              <div class="list-posts__pane"><img class="list-posts__image" src="public/img/mastodon.jpg" alt="image"></div>
+              <div class="list-posts__title">Mastodon, a much better twitter</div>
+              <div class="list-posts__content">Mastodon isn’t just a website, it is a federation—think Star Trek. Thousands of independent communit...</div></a><a class="list-posts__link" href="article-detail.html">
+              <div class="list-posts__pane"><img class="list-posts__image" src="public/img/mindfulness.jpg" alt="image"></div>
+              <div class="list-posts__title">What is Mindfulness?</div>
+              <div class="list-posts__content">Mindfulness is the psychological process of purposely bringing one's attention to experiences occurr...</div></a><a class="list-posts__link" href="article-detail.html">
+              <div class="list-posts__pane"><img class="list-posts__image" src="public/img/yalitza-aparicio.jpg" alt="image"></div>
+              <div class="list-posts__title">Oscars’ First indigenous actress mominee</div>
+              <div class="list-posts__content">Yalitza Aparicio was the Oscars’ first indigenous mexican actress nominee. Cihuatl is a Free CSS, Bl...</div></a>
+          </div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Labels</div>
+          <div class="common-links__content common-links__tags"><a class="common-links__tag" href="#">Health</a><a class="common-links__tag" href="#">Tech</a><a class="common-links__tag" href="#">Travel</a><a class="common-links__tag" href="#">Women</a>
+          </div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Comments</div>
+          <div class="common-links__content list-comments">
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/mindfulness.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
+            </div>
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/mastodon.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
+            </div>
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/acupuncture.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
+            </div>
+            <div class="list-comments__item">
+              <div class="list-comments__pane"><img class="list-comments__image" src="public/img/coconut-oil.jpg" alt="image"></div><a class="list-comments__content" href="#"><b class="list-comments__user-name">TemplateUser</b>Lorem ipsum dolor sit amet consectetur adipisicing elit?</a>
+            </div>
+          </div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Blogroll</div>
+          <div class="common-links__content">
+            <ul class="common-links__links">
+              <li class="common-links__item"><a class="common-links__link" href="#">Open Themes</a></li>
+              <li class="common-links__item"><a class="common-links__link" href="#">BTemplates Blog</a></li>
+              <li class="common-links__item"><a class="common-links__link" href="#">Blog and Web</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="common-links__section">
+          <div class="common-links__header">Logo</div>
+          <div class="common-links__content">
+            <div class="common-links__brand">TemplateBlog</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section footer">
+      <div class="footer__inner container">
+        <div class="footer__license">&copy; 2020 created by template<a class="footer__link" href="https://btemplates.com/2020/blogger-template-cihuatl/">Cihuatl</a></div>
+        <div class="footer__links"><a class="footer__link" href="#">Home</a><a class="footer__link" href="#">Contacts</a></div>
+      </div>
+    </div>
+    <script src="public/js/script.min.js"></script>
+  </body>
+</html>

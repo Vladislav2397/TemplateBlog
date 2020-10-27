@@ -1,22 +1,24 @@
 extends doctype
 
+block variables
+	- let isCarousel = true
+
 block body
 
-  include includes/navbar
+	include includes/navbar
 
-  .section.container
-    .section.header
-      .header__title TemplateBlog
-      | Lorem ipsum, dolor sit amet consectetur adipisicing elit!
+	.grid-layout.container
+		.grid-layout.header
+			.header__title TemplateBlog
+			| Lorem ipsum, dolor sit amet consectetur adipisicing elit!
 
-    include includes/carousel
+		include includes/carousel
 
-    .section.section--1fr-250
-      .section
-        block content
+		.grid-layout.grid-layout--sidebar
+			.grid-layout
+				block content
 
-      include includes/sidebar
+			include includes/sidebar
 
-  include includes/common-links
-
-  include includes/footer
+	include includes/common-links
+	include includes/footer

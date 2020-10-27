@@ -1,0 +1,92 @@
+.editor {
+  font-size: $font-md;
+  font-family: 'OpenSans';
+
+  p, strong, em, i,
+  blockquote, ul, ol,
+  li, del, u, code,
+  table, tr, th, td,
+  tbody, thead, pre, b {
+    font-size: inherit;
+  }
+
+  sup, sub {
+    font-size: $font-xs;
+  }
+
+  p {
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  a { color: $pink-darker }
+
+  code, blockquote {
+    position: relative;
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &::before {
+      position: relative;
+      border-right: 2px solid $pink-darker;
+      font-size: $font-brand-md;
+      padding: 0 10px;
+      margin-right: 10px;
+    }
+  }
+
+  code {
+    &::before {
+      content: '</>';
+      color: $pink-darker;
+    }
+  }
+
+  blockquote{
+    &::before {
+      content: '"..."';
+      color: $dark;
+      border-right: 2px solid $dark;
+    }
+  }
+
+  ol, ul {
+    padding-left: 20px;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 5px 0;
+  }
+
+  h1 { font-size: $font-brand-xs }
+  h2 { font-size: $font-title-lg }
+  h3 { font-size: $font-title-md }
+  h4 { font-size: $font-xl }
+  h5 { font-size: $font-lg }
+  h6 { font-size: $font-md }
+
+  table {
+    width: 100%;
+    text-align: center;
+    border: none;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-top: 1px solid $gray;
+
+    tr:nth-child(odd) > td {
+      background: #eee;
+    }
+
+    tr {
+      height: 40px;
+    }
+  }
+}

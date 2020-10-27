@@ -4,6 +4,7 @@
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+  max-width: 100%;
   padding: 20px 10px;
   background-color: $pink;
   position: relative;
@@ -35,7 +36,7 @@
     font-family: cursive;
     font-size: $font-title-lg;
     padding-bottom: 10px;
-    margin-bottom: 10px;
     border-bottom: 2px dotted $dark;
+    margin-bottom: 10px;
   }
 }

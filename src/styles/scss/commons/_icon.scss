@@ -1,0 +1,26 @@
+.icon {
+  &__item {
+    margin: 0 3px;
+    transition: 0.8s;
+
+    &--facebook:hover {
+      color: $facebook-color
+    }
+
+    &--pinterest:hover {
+      color: $pinterest-color
+    }
+
+    &--twitter:hover {
+      color: $twitter-color
+    }
+
+    &--whatsapp:hover {
+      color: $whatsapp-color
+    }
+
+    &--mail:hover {
+      color: $mail-color
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.slider-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  overflow: hidden;
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-sm;
+    color: $gray;
+
+    &:last-child {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__pane {
+    height: 100%;
+  }
+
+  &__image {
+    height: 100%;
+    margin: 0 10px;
+  }
+}

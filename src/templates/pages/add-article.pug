@@ -1,0 +1,41 @@
+extends ../base-template
+
+mixin form-tag(tag)
+	.add-article-form__tag
+		input(type="checkbox" name=tag id=tag)
+		label(for=tag)=tag
+
+block content
+	form.grid-layout.grid-layout--add-article-form.add-article-form(method="post")
+
+		input.grid-layout--span2.add-article-form__input(type="text" placeholder="input title article" name="title")
+
+		.add-article-form__header Public date
+			span (You can't choose date. Select now date)
+
+		.add-article-form__header Tags 
+			span (You can choose several)
+
+		.add-article-form__pub-date
+			i.far.fa-clock
+			| &nbsp;July, 15 2020
+
+		select.add-article-form__tags(name="tags" multiple)
+			//- each val, key in tags
+				.add-article-form__tag
+					input(type="checkbox" name=key id=key)
+					label(for=key)=key
+			each val, key in tags
+				option.add-article-form__tag(value=key)=key
+
+		img.add-article-form__pane(src="", alt="Image" id="preview")
+
+		.add-article-form__select-file
+			input.add-article-form--hidden(type="file" name="image" id="file" onchange="previewImage()")
+			label.add-article-form__select(for="file" id="file-btn") Upload image
+
+		textarea.grid-layout--span2.add-article-form__textarea(type="text" placeholder="Article content" name="content")
+
+		input.add-article-form__btn(type="submit", value="Send")
+
+	script(src="public/js/loadImage.js")

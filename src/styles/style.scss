@@ -22,8 +22,15 @@
   'scss/commons/about',
   'scss/commons/follow-me',
   'scss/commons/common-links',
-  'scss/commons/list-comments';
+  'scss/commons/list-comments',
+  'scss/commons/article-detail',
+  'scss/commons/editor',
+  'scss/commons/add-article-form',
+  'scss/commons/related-posts',
+  'scss/commons/icon',
+  'scss/commons/slider-links';
 
 @import
   'scss/layouts/container',
-  'scss/layouts/section';
+	'scss/layouts/section',
+	'scss/layouts/grid';

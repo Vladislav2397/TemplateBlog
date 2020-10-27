@@ -1,11 +1,12 @@
 .article {
   display: grid;
+  margin-bottom: 20px;
 
   &__header {
     font-size: $font-title-xl;
     text-transform: uppercase;
     text-align: center;
-    margin: 20px 0;
+    margin: 0 0 20px;
     position: relative;
     font-family: $font-open-sans;
     font-weight: 400;
@@ -82,6 +83,8 @@
     display: grid;
     grid-template-columns: max-content auto max-content;
     grid-template-rows: 42px;
+    justify-items: center;
+    align-items: center;
   }
 
   &__btn {
@@ -91,6 +94,7 @@
     background-color: $gray;
     cursor: pointer;
     transition: 0.3s;
+    align-self: stretch;
 
     display: grid;
     grid-template-columns: auto auto;
@@ -102,20 +106,9 @@
     }
   }
 
-  &__links {
-    display: grid;
-    grid-template-columns: repeat(5, min-content);
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
-
-  &__link {
-    margin: 0 5px;
-  }
-
-  &__icon {
-    transition: 0.8s;
+  &__icons {
+    color: $gray;
+    font-size: $font-xl;
   }
 
   &__post {

@@ -1,0 +1,30 @@
+extends ../base-template
+
+block content
+  .section.article-detail
+    .article-detail__title Mastodon, a much better twitter
+    .article-detail__section
+      .article-detail__pub-date
+        i.far.fa-clock
+        | &nbsp;July, 16 2020
+      .article-detail__tags
+        .article-detail__tag Health
+        .article-detail__tag Women
+    img.article-detail__image(src="public/img/mastodon.jpg")
+    .article-detail__content.editor
+      include blocks/editor
+    .article-detail__links
+      a(href="#")
+        i.icon__item.icon__item--whatsapp.fab.fa-whatsapp
+      a(href="#")
+        i.icon__item.icon__item--twitter.fab.fa-twitter
+      a(href="#")
+        i.icon__item.icon__item--pinterest.fab.fa-pinterest-p
+      a(href="#")
+        i.icon__item.icon__item--facebook.fab.fa-facebook-f
+      a(href="#")
+        i.icon__item.icon__item--mail.far.fa-envelope-open
+
+    include ../includes/about
+    include blocks/slider-links
+    include blocks/related-posts

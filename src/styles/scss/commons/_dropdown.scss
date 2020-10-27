@@ -6,20 +6,28 @@
     transform: scaleY(1);
   }
 
+  @include media-screen-max($screen-lg) {
+    &:hover .dropdown__menu {
+      transform: scaleY(0);
+    }
+  }
+
   &__menu {
+    position: absolute;
+    top: 100%;
+    left: -50px;
+    right: -50px;
+    height: auto;
+    padding: 15px 0;
+    background: $dark;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.5s;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 100%;
-    width: 200px;
-    height: auto;
-    transform: scaleY(0);
-    padding: 15px 0;
-    transition: 0.5s;
-    transform-origin: top;
-    background: $dark;
   }
 
   &__link {
